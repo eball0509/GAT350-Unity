@@ -56,8 +56,8 @@ Shader "GAT350/Basic_Color"
                 // sample the texture
                 //fixed4 col = tex2D(_MainTex, i.uv);
                 // apply fog
-                //UNITY_APPLY_FOG(i.fogCoord, col);
-                return fixed4(_Color.r * _Intensity, _Color.a);
+                UNITY_APPLY_FOG(i.fogCoord, col);
+                return fixed4(_Color.rgb * _Intensity, _Color.a);
             }
             ENDCG
         }
